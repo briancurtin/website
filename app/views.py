@@ -16,3 +16,7 @@ def about():
 @app.route('/photography/<name>')
 def photography(name="baseball"):
     return render_template("%s.html" % name)
+
+@app.route("/photography/thag-20170630")
+def thag_20170630():
+    return render_template("thag-20170630.html")
