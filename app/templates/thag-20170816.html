@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% set root = "http://84e4527ee338cd66bfb0-f7a6f90b7e1c3592a46148bdf87a4363.r59.cf5.rackcdn.com/thag-20170816/" %}
+
+<p>Click an image to open a bigger version in a new tab.</p>
+
+{% for row in [("9717", "9726", "9731", "9750"),
+               ("9759", "9768", "9771", "9778")] %}
+
+<div class="row">
+  {% for img in row %}
+  <div class="col-md-3">
+    <a href="{{ root }}/thag-20170816-{{ img }}.jpg" target="_blank">
+      <img class="img-fluid" src="{{ root }}/thag-20170816-1080-{{ img }}.jpg" />
+    </a>
+  </div>
+  {% endfor %}
+</div>
+<br />
+{% endfor %}
+
+
+{% endblock %}
