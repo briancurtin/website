@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% set root = "https://14ff3e73784454b4c2cb-f7a6f90b7e1c3592a46148bdf87a4363.ssl.cf5.rackcdn.com/baseball/svc" %}
+
+<p>Click an image to open a bigger version in a new tab.</p>
+
+
+This picture is also available as a TIFF, which is a higher quality file for
+printing--it's also a huge file. Depending on who you print with, they might
+accept this type of file.
+<a href="{{ root}}/BearcatBallfield.tif" target="_blank">Click here for the TIFF</a>.
+
+<div class="row">
+  <div class="col-12 align-self-center">
+    <a href="{{ root }}/BearcatBallfield.jpg" target="_blank">
+      <img class="img-fluid"
+           src="{{ root }}/BearcatBallfield_1080x524.jpg" />
+    </a>
+  </div>
+</div>
+<br />
+
+{% for row in [("0244", "0247", "0416", "0423"),
+               ("0425", "0426", "0427")] %}
+<div class="row">
+  {% for img in row %}
+  <div class="col-md-3">
+    <a href="{{ root }}/nick-{{ img }}.jpg" target="_blank">
+      <img class="img-fluid"
+           src="{{ root }}/nick-small-{{ img }}.jpg" />
+    </a>
+  </div>
+  {% endfor %}
+</div>
+<br />
+{% endfor %}
+
+
+{% endblock %}
